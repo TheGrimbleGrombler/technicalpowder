@@ -7,16 +7,22 @@
   font-family: "Courier New", Courier, monospace;
   background-color: black;
   padding: 4px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body {
   margin: 1rem;
   line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 body img { 
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges; /* Firefox */
   image-rendering: crisp-edges;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .textbox {
@@ -138,6 +144,10 @@ body img {
   background-color: transparent;
   filter: blur(8px);
 
+}
+.imagesharp {
+  background-color: transparent;
+  height:auto;
 }
 
 .funnybg {
