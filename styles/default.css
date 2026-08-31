@@ -111,6 +111,7 @@ body img {
   height: 100vh; 
   left: 0vw; 
   top: 0vh;
+  overflow-y: auto;
 }
 
 .backgroundwhite {
