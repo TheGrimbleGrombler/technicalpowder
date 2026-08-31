@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../Assets/LOGO.png" />
+    <meta name="description" content="Technical TPT Info" />
+
+    <title>Layering</title>
+
+    <link rel="stylesheet" href="../styles/default.css" />
+    <script type="module" src="../js/main.js" defer></script>
+
+</head>
+  <body id="BODY" style="overflow: hidden;" class="BODY_default">
+    <image style="position: absolute; width: 100vw; height: 100vh; left: 0vw; top: 0vh; background-position: 1px 1px" src="../Assets/background.png" id="background"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: calc(100vh - 500px); transform: rotate(0deg);" src="../Assets/Rings.png" id="ring1" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: -500px; transform: rotate(22.5deg);" src="../Assets/Rings.png" id="ring2" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: calc(100vh - 500px); transform: rotate(45deg);" src="../Assets/Rings.png" id="ring3" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: -500px; transform: rotate(67.5deg);" src="../Assets/Rings.png" id="ring4" class="image"></image>
+
+    <div style="display:block" id="Page_Surfacing" class="ghost page">
+
+        <a style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title" href="../index.html">Main</a>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Surfacing
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf alignleft">
+            <br>
+            Our lord and savior SPRK has yet another gift to bestow upon us all:<br>
+            When SPRK's life reaches 0, it doesnt just reset it's stats and change it's type, no no no,<br>
+            It deletes itself and <b>creates an entirely new particle at the same position</b>.<br>
+            That should sound alarms, why you may ask? Because of the PMAP.<br>
+            When a particle is created at a certain position, the game goes<br>
+            <i class="grey">"Oh, okay- I guess theres a particle at this position now."</i><br>
+            Without ever actually checking to make sure its on top of the stack.<br>
+            <br>
+            What this means is: We can have any particle functionally be on top of a stack whenever we damn well please.<br>
+            (as long as we can convert it back to SPRK, and keep a stock of 4 of them to allow us to cycle them.)<br>
+            You want a stock of 4 ideally, or a nearby FILT @ 0x10000001 works too technically.<br>
+            Such that each frame one particle surfaces at that point in the stack, and is put back in at LIFE = 4<br>
+            So there is always one SPRK particle at LIFE 1, 2, 3, and 4 respectively.<br>
+            <br>
+            <span class="subtitle">Multi-Surfacing</span><br>
+            Surfacing is good and all... But what if it was better?<br>
+            Thats right, We can do this as many times as we want within a single particle stack per frame.<br>
+            SPRK doesnt detect it's life is 0 and convert back to base elements on frame start, no no no;<br>
+            SPRK checks for that <b>when it updates</b>, meaning you can just shove more groups of 4 SPRK and systems to cycle it in a stack.<br>
+            For a demonstration of this, take these particles in this order from top to bottom:<br>
+            <i class="grey">
+                SPRK(PSCN)<br>
+                CONV(WOOD) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(COAL) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(TTAN) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(IRON) [tmp = PSCN]<br>
+            </i><br>
+            
+            I shouldnt need to explain what that'll end up as, assuming you've read the ramblings above.<br>
+
+        </div>
+
+    </div>
+
+  </body>
+</html>

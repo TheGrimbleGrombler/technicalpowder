@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../Assets/LOGO.png" />
+    <meta name="description" content="Technical TPT Info" />
+
+    <title>Layering</title>
+
+    <link rel="stylesheet" href="../styles/default.css" />
+    <script type="module" src="../js/main.js" defer></script>
+
+</head>
+  <body id="BODY" style="overflow: hidden;" class="BODY_default">
+    <image style="position: absolute; width: 100vw; height: 100vh; left: 0vw; top: 0vh; background-position: 1px 1px" src="../Assets/background.png" id="background"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: calc(100vh - 500px); transform: rotate(0deg);" src="../Assets/Rings.png" id="ring1" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: -500px; transform: rotate(22.5deg);" src="../Assets/Rings.png" id="ring2" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: calc(100vh - 500px); transform: rotate(45deg);" src="../Assets/Rings.png" id="ring3" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: -500px; transform: rotate(67.5deg);" src="../Assets/Rings.png" id="ring4" class="image"></image>
+
+    <div style="display:block" id="Page_Serialization" class="ghost page">
+
+        <a style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title" href="../index.html">Main</a>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Serialization
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px;" class="textbox text border lefthalf alignleft">
+
+            <br>
+            Serialization/Deserialization is to use sensors in the “Sensors” category to manipulate properties of elements by extracting information from FILT c-type. <br>
+            There does not exist a save that can present an adequate tutorial. <br>
+            It is suggested you refer to the sensor pages in the official wiki and experiment yourself for a deeper grasp. <br>
+            ^ Above is extracted from the old docs, An attempt at an explanation of this follows.<br>
+            This is gonna be a long one.<br>
+            <br>
+            LSNS, TSNS, and VSNS all provide serialization & deserialization capabilities<br>
+            LSNS handles Life<br>
+            TSNS handles Temp<br>
+            VSNS handles Velocity (vx/vy)<br>
+            <br>
+            For this explanation we'll use Life as the chosen value since thats the most common, but it works identically for the other options.<br>
+            SNS with a tmp of 1 will serialize<br>
+            SNS with a tmp of 3 will deserialize<br>
+            To serialize is to take the LIFE value of a nearby pixel, and set a nearby FILT pixel's CTYPE to the LIFE value retrieved + 0x10000000 (16^7)<br>
+            To deserialize is to take the CTYPE of a nearby FILT pixel, subtract 0x10000000 (16^7), and set a nearby particle's LIFE to the new value.<br>
+            <br>
+            The 0x10000000 (16^7) is a constant used by serialization and deserialization, <br>
+            this is most commonly used in electronics to ensure a line of BRAY doesn't get cut unintentionally due to having a value of 0.<br>
+            You do not need to understand how FILT works to use serialization/deserialization, Although it will help.<br>
+            <br>
+            When taking the LIFE of a "nearby pixel", the SNS particle searches within a square radius of it's tmp2, centered at itself.<br>
+            It searches top to bottom, left to right, So top left, middle left, bottom left, top middle, middle, bottom middle, ect.<br>
+            The last particle it finds will be what the LIFE is taken from.<br>
+            The same behavior is applied during deserialization when looking for a FILT particle to take the CTYPE of.<br>
+            <br>
+            When applying a LIFE/CTYPE value of a "nearby pixel", the SNS particle searches much like previously, with a radius of 1.<br>
+            Strictly the particles immediately around it will be affected, and every single valid one will be.<br>
+            What this means is:<br>
+            Every nearby FILT particle will be serialized to, replacing it's CTYPE.<br>
+            OR<br>
+            Every nearby particle will be deserialized to, replacing it's LIFE value.<br>
+            <br>
+            Now for some examples:<br>
+            If LSNS is placed next to SPRK, with FILT within it's tmp2's related radius, and it's tmp value set to 3,<br>
+            the LSNS will take the value from the FILT, and apply it to the SPRK's LIFE.<br>
+            If the FILT is set to 0x10000003 (16^7 + 3), then we subtract 16^7, leaving us with 3,<br>
+            then we set the SPRK's LIFE to 3, which is the value at which SPRK activates CRAY/DRAY/ARAY/ect.<br>
+            This allows the SPRK pixel to activate nearby particles every single frame given the LSNS activates before the particle to-be-activated.<br>
+            <br>
+            This one is a more niche example but explains VSNS well,<br>
+            PHOT is spawned next to VSNS next to FILT,<br>
+            VSNS has a tmp of 1, so it serializes.<br>
+            the VSNS sees the PHOT's velocity, PHOT starts with a velocity of 3 either diagonally or straight;<br>
+            VSNS takes the PHOT's velocity of 3, adds 0x10000000 (16^7), and set's the FILT's CTYPE to that value.<br>
+            The FILT now has a CTYPE identical to what we used in the last example.<br>
+            What this means is hypothetically someone could, within a single frame,<br>
+            Create FILT, Spawn PHOT, Set the FILT to 0x10000003, Cleanup the PHOT, Create SPRK(PSCN), Set the SPRK's LIFE to 3, Cleanup the FILT, use ARAY/CRAY/DRAY, and clean it all up like nothing ever happened.<br>
+            As a challenge, create such a device.<br>
+            As a harder challenge, compress it to no more than 4 pixels excluding diamond for padding and such.<br>
+            ^ Bonus points if you get it in one pixel total.<br>
+            <br>
+
+        </div>
+
+    </div>
+
+  </body>
+</html>

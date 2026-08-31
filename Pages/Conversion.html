@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../Assets/LOGO.png" />
+    <meta name="description" content="Technical TPT Info" />
+
+    <title>Layering</title>
+
+    <link rel="stylesheet" href="../styles/default.css" />
+    <script type="module" src="../js/main.js" defer></script>
+
+</head>
+  <body id="BODY" style="overflow: hidden;" class="BODY_default">
+    <image style="position: absolute; width: 100vw; height: 100vh; left: 0vw; top: 0vh; background-position: 1px 1px" src="../Assets/background.png" id="background"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: calc(100vh - 500px); transform: rotate(0deg);" src="../Assets/Rings.png" id="ring1" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: calc(100vw - 500px); top: -500px; transform: rotate(22.5deg);" src="../Assets/Rings.png" id="ring2" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: calc(100vh - 500px); transform: rotate(45deg);" src="../Assets/Rings.png" id="ring3" class="image"></image>
+    <image style="position: absolute; width: 1000px; height: 1000px; left: -500px; top: -500px; transform: rotate(67.5deg);" src="../Assets/Rings.png" id="ring4" class="image"></image>
+
+    <div style="display:block" id="Page_Conversion" class="ghost page">
+
+        <a style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title" href="../index.html">Main</a>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Conversion
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf alignleft">
+            <br>
+            One of the most commonly used particles in subframe devices, CONV.<br>
+            <br>
+            When CONV updates, it checks each particle around it in the typical order,<br>
+            TL ML BL TM MM BM TR MR BR<br>
+            <br>
+            Each particle that matches it's tmp, or the inverse if it's tmp2 is 1, <br>
+            is CONVerted to CONV's CTYPE.<br>
+            No particle stats are conserved during this aside from the position.<br>
+            The newly made particle will update just as the one it was made from would have.<br>
+            <br>
+            For the most part it's as simple as that, though there are some special interactions.<br>
+            CONVerting to SPRK will have the original element as the CTYPE. (PSCN -> SPRK = SPRK(PSCN))<br>
+            CONVerting to FILT (125) + 512*n will spawn the FILT with a tmp of (CONV's CTYPE - 125) / 512.<br>
+
+        </div>
+
+    </div>
+
+  </body>
+</html>
