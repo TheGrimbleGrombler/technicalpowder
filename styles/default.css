@@ -33,17 +33,14 @@ body img {
 .text {
   font-size: 16px;
   color: rgb(255,255,255);
-  padding: 4px;
 }
 .subtitle {
   font-size: 32px;
   color: rgb(255,255,255);
-  padding: 4px;
 }
 .title {
   font-size: 48px;
   color: rgb(255,255,255);
-  padding: 4px;
 }
 
 .backgroundwhite {
