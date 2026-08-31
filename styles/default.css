@@ -68,6 +68,7 @@ body img {
 
 .image {
   background-color: transparent;
+  filter: blur(1px);
 }
 
 .funnybg {
