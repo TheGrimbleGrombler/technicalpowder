@@ -1,6 +1,25 @@
 
 var Tick = 0;
 
+function swapTab(name) {
+
+
+
+}
+
+function setupTabButtons() {
+
+    var buttons = document.getElementsByClassName("pagebutton")
+    for (let i = 0; i < buttons.length; i++) {
+
+        buttons[i].addEventListener('click', () => {
+            console.log(toString(buttons[i].textContent));
+        });
+
+    }
+
+}
+
 function updateVisuals() {
 
     Tick = Tick + 0.25;
