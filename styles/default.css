@@ -95,7 +95,7 @@ body img {
 
 .pagebutton {
   height: 20px;
-  width: calc(33%-10px);
+  width: calc(25%-10px);
   border-radius: 2px;
   border: #6b6b6b;
   border-style: solid;
@@ -118,6 +118,22 @@ body img {
   left: 0vw; 
   top: 0vh;
   overflow-y: auto;
+}
+
+.grey {
+  color: grey;
+}
+.red {
+  color: red;
+}
+.green {
+  color: lime;
+}
+.blue {
+  color: blue;
+}
+.yellow {
+  color: yellow;
 }
 
 .backgroundwhite {

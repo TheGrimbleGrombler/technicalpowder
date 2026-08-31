@@ -44,25 +44,29 @@
             </caption>
             <thead>
                 <tr>
-                    <th scope="row" style="width:33%">Concepts</th>
-                    <th scope="row" style="width:33%">Theory</th>
-                    <th scope="row" style="width:33%">Synthesis</th>
+                    <th scope="row" style="width:25%">Concepts</th>
+                    <th scope="row" style="width:25%">Advanced</th>
+                    <th scope="row" style="width:25%">Theory</th>
+                    <th scope="row" style="width:25%">Synthesis</th>
                 </tr>
             </thead>
             <!-- The formatting is a litte weird here, the first page button of each group is the leftmost column, the second is the middle, and the last one is the third column. -->
             <tbody>
                 <tr>
                     <td class="pagebutton">Layering</td>
+                    <td class="pagebutton">Composition</td>
                     <td class="pagebutton">Bomb Theory</td>
-                    <td class="pagebutton"></td>
+                    <td class="pagebutton">Zain</td>
                 </tr>
                 <tr>
                     <td class="pagebutton">Serialization</td>
-                    <td class="pagebutton">Zain</td>
+                    <td class="pagebutton">Surfacing</td>
                     <td class="pagebutton"></td>
+                    <td class="pagebutton">Megastacking</td>
                 </tr>
                 <tr>
                     <td class="pagebutton">Particle Order</td>
+                    <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                 </tr>
@@ -70,18 +74,10 @@
                     <td class="pagebutton">Subframe</td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
-                </tr>
-                <tr>
-                    <td class="pagebutton"></td>
-                    <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                 </tr>
                 <tr>
-                    <td class="pagebutton"></td>
-                    <td class="pagebutton"></td>
-                    <td class="pagebutton"></td>
-                </tr>
-                <tr>
+                    <td class="pagebutton">Conversion</td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
@@ -90,13 +86,28 @@
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                </tr>
+                <tr>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
                 </tr>
                 <tr>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
                 </tr>
                 <tr>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                    <td class="pagebutton"></td>
+                </tr>
+                <tr>
+                    <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
                     <td class="pagebutton"></td>
@@ -342,6 +353,172 @@
             Welp, Theres nothing here yet 😓
             <br>
         
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Composition" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Composition
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf">
+            <br>
+            A single pixel is capable of surrounding itself with specifically selected pixels at each surrounding position.<br>
+            This is for one reason:<br>
+            <b><i>At any given time, There may only be one pixel of SPWN / SPWN2</i></b><br>
+            <br>
+            To rephrase this in a way that is easier to understand, executing particles in this order:<br>
+            <i class="grey">
+                PCLN(PHOT) [life = 10]<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                CONV(LIGH) [tmp = PHOT]
+            </i><br>
+            <br>
+            Will accomplish the following:<br>
+            <i class="grey">
+                Particle is surrounded with PHOT.<br>
+                First PHOT detected (top left) is CONVerted to SPWN, the rest <b class="grey">are not.</b><br>
+                The one SPWN is CONVerted to an example element, in this case, IRON.<br>
+                Remaining PHOT is converted to LIGH as cleanup.
+            </i><br>
+            <br>
+            What we have just accomplished, to state it a third time, is making a particle specifically in the top left position.<br>
+            And it doesnt stop there, of course.<br>
+            What if we continue?<br>
+            What if we were to...<br>
+            <i class="grey">
+                PCLN(PHOT) [life = 10]<br>
+                ----0<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                ----1, Top Left<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                -CONV(VIBR) [tmp = SPWN]-<br>
+                ----2, Middle Left<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                ----3, Bottom Right<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                ----4, Top Middle<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                ----5, Bottom Middle<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                CONV(IRON) [tmp = SPWN]<br>
+                ----6, Top Right<br>
+                CONV(SPWN) [tmp = PHOT]<br>
+                -CONV(RSSS) [tmp = SPWN]-<br>
+                ----7, Middle Right<br>
+                CONV(LIGH) [tmp = IRON]<br>
+                CONV(LIGH) [tmp = PHOT]<br>
+            </i><br>
+            <br>
+            With that, we have placed VIBR on the middle left, and RSSS on the middle right, then wiped the remainder away.<br>
+            Surely you can imagine what we can do with that, right?<br>
+            If you've been keeping up.<br><br>
+        
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Conversion" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Conversion
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf">
+            <br>
+            One of the most commonly used particles in subframe devices, CONV.<br>
+            <br>
+            When CONV updates, it checks each particle around it in the typical order,<br>
+            TL ML BL TM MM BM TR MR BR<br>
+            <br>
+            Each particle that matches it's tmp, or the inverse if it's tmp2 is 1, <br>
+            is CONVerted to CONV's CTYPE.<br>
+            No particle stats are conserved during this aside from the position.<br>
+            The newly made particle will update just as the one it was made from would have.<br>
+            <br>
+            For the most part it's as simple as that, though there are some special interactions.<br>
+            CONVerting to SPRK will have the original element as the CTYPE. (PSCN -> SPRK = SPRK(PSCN))<br>
+            CONVerting to FILT (125) + 512*n will spawn the FILT with a tmp of (CONV's CTYPE - 125) / 512.<br>
+
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Megastacking" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Megastacking
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf">
+            <br>
+            Welp, Theres nothing here yet 😓
+            <br>
+        
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Surfacing" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px; font-size: clamp(16px, 32px, 32px);" class="textbox title border lefthalf">
+
+            Surfacing
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px; display:inline-block" class="textbox text border lefthalf">
+            <br>
+            Our lord and savior SPRK has yet another gift to bestow upon us all:<br>
+            When SPRK's life reaches 0, it doesnt just reset it's stats and change it's type, no no no,<br>
+            It deletes itself and <b>creates an entirely new particle at the same position</b>.<br>
+            That should sound alarms, why you may ask? Because of the PMAP.<br>
+            When a particle is created at a certain position, the game goes<br>
+            <i class="grey">"Oh, okay- I guess theres a particle at this position now."</i><br>
+            Without ever actually checking to make sure its on top of the stack.<br>
+            <br>
+            What this means is: We can have any particle functionally be on top of a stack whenever we damn well please.<br>
+            (as long as we can convert it back to SPRK, and keep a stock of 4 of them to allow us to cycle them.)<br>
+            You want a stock of 4 ideally, or a nearby FILT @ 0x10000001 works too technically.<br>
+            Such that each frame one particle surfaces at that point in the stack, and is put back in at LIFE = 4<br>
+            So there is always one SPRK particle at LIFE 1, 2, 3, and 4 respectively.<br>
+            <br>
+            <span class="subtitle">Multi-Surfacing</span><br>
+            Surfacing is good and all... But what if it was better?<br>
+            Thats right, We can do this as many times as we want within a single particle stack per frame.<br>
+            SPRK doesnt detect it's life is 0 and convert back to base elements on frame start, no no no;<br>
+            SPRK checks for that <b>when it updates</b>, meaning you can just shove more groups of 4 SPRK and systems to cycle it in a stack.<br>
+            For a demonstration of this, take these particles in this order from top to bottom:<br>
+            <i class="grey">
+                SPRK(PSCN)<br>
+                CONV(WOOD) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(COAL) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(TTAN) [tmp = PSCN]<br>
+                SPRK(PSCN)<br>
+                CONV(IRON) [tmp = PSCN]<br>
+            </i><br>
+            
+            I shouldnt need to explain what that'll end up as, assuming you've read the ramblings above.<br>
+
         </div>
 
     </div>
