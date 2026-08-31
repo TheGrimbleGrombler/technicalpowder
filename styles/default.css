@@ -105,6 +105,14 @@ body img {
   box-shadow: 0 0 0px 0px rgba(255,255,255,0);
 }
 
+.page {
+  position: absolute; 
+  width: 100vw; 
+  height: 100vh; 
+  left: 0vw; 
+  top: 0vh;
+}
+
 .backgroundwhite {
   background-color: rgb(116, 116, 116);
 }

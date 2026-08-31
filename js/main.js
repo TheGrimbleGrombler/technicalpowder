@@ -13,7 +13,7 @@ function setupTabButtons() {
     for (let i = 0; i < buttons.length; i++) {
 
         buttons[i].addEventListener('click', () => {
-            console.log(toString(buttons[i].textContent));
+            console.log(buttons[i].textContent);
         });
 
     }
