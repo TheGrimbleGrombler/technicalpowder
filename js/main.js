@@ -38,4 +38,5 @@ function updateVisuals() {
 
 document.addEventListener("DOMContentLoaded", function() {
   setInterval(updateVisuals, 16);
+  setupTabButtons()
 });
