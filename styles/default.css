@@ -66,6 +66,10 @@ body img {
   text-align: center;
 }
 
+.image {
+  background-color: transparent;
+}
+
 .funnybg {
   background-color:black;
   background-image:
