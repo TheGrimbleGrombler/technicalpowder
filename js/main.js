@@ -35,10 +35,10 @@ function setupTabButtons() {
             buttons[i].addEventListener('click', () => {
                 //console.log(buttons[i].textContent);
                 //swapTab(buttons[i].textContent);
-                if ((window.location.href).substring(0,5) == "https") {
-                    window.location.href = (location.href)+"Pages/"+buttons[i].textContent+".html";
-                } else {
+                if ((window.location.href).substring((window.location.href).length-5,(window.location.href).length) == ".html") {
                     window.location.href = (location.href).substring(0,(location.href).length-10)+"Pages/"+buttons[i].textContent+".html";
+                } else {
+                    window.location.href = (location.href)+"Pages/"+buttons[i].textContent+".html";
                 }
             });
         }
