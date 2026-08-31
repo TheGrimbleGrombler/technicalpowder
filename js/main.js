@@ -31,13 +31,14 @@ function setupTabButtons() {
 
     var buttons = document.getElementsByClassName("pagebutton");
     for (let i = 0; i < buttons.length; i++) {
-
-        buttons[i].addEventListener('click', () => {
-            //console.log(buttons[i].textContent);
-            //swapTab(buttons[i].textContent);
-            
-            window.location.href = (location.href).substring(0,(location.href).length-10)+"Pages/"+buttons[i].textContent+".html";
-        });
+        if (buttons[i].textContent.length >= 5) {
+            buttons[i].addEventListener('click', () => {
+                //console.log(buttons[i].textContent);
+                //swapTab(buttons[i].textContent);
+                
+                window.location.href = (location.href).substring(0,(location.href).length-10)+"Pages/"+buttons[i].textContent+".html";
+            });
+        }
 
     }
 
