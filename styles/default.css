@@ -88,7 +88,7 @@ body img {
 }
 
 .pagebutton {
-  height: 90px;
+  height: 20px;
   width: calc(33%-10px);
   border-radius: 2px;
   border: #6b6b6b;
