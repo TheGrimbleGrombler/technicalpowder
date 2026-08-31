@@ -28,12 +28,15 @@ body img {
 }
 .text {
   font-size: 16px;
+  color: rgb(255,255,255);
 }
 .subtitle {
   font-size: 32px;
+  color: rgb(255,255,255);
 }
 .title {
   font-size: 64px;
+  color: rgb(255,255,255);
 }
 
 .backgroundwhite {
