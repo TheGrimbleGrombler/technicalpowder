@@ -1,3 +1,4 @@
+// The current logo is temporary, same with the name of this whole thing.
 
 var Tick = 0;
 var curTab = "Main";
