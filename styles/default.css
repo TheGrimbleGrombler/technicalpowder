@@ -42,6 +42,51 @@ body img {
   color: rgb(255,255,255);
 }
 
+.fillwidth {
+  width: 90%;
+  left: 5%;
+}
+.lefthalf {
+  width: 40%;
+  left: 5%;
+}
+.righthalf {
+  width: 40%;
+  left: 55%;
+}
+.square1 {
+  height: 64px;
+  width: 64px;
+}
+.square2 {
+  height: 128px;
+  width: 128px;
+}
+.square3 {
+  height: 192px;
+  width: 192px;
+}
+.square3 {
+  height: 256px;
+  width: 256px;
+}
+.square1,.square2,.square3,.square4.anchorright {
+  left: 0vw;
+  right: 95%;
+}
+.height1 {
+  height: 64px;
+}
+.height2 {
+  height: 128px;
+}
+.height3 {
+  height: 192px;
+}
+.height4 {
+  height: 256px;
+}
+
 .backgroundwhite {
   background-color: rgb(116, 116, 116);
 }
