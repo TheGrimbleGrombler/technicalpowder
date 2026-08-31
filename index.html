@@ -213,5 +213,123 @@
         </div>
 
     </div>
+    <div style="display:none" id="Page_Particle Order" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px;" class="textbox title border lefthalf">
+
+            Particle Order
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px;" class="textbox text border lefthalf">
+            <br>
+            Particle order is as the name implies, the order in which each particle in the save is read every frame<br>
+            <br>
+            When the player places a particle of anything (excluding walls), each new particle receives the next particle ID in the order it was placed.<br>
+            <br>
+            However, every time you save it, such as online saving or stamping, the particle order changes to a very predictable order.<br>
+            <br>
+            Once saved, the game scans particles like reading a book: starting from the top row, moving left to right, then continuing onto the next row until every particle has been processed, (in the case of stacked particles it reads from the bottom of the stack to the top), every single frame 60 times a second.<br>
+            <br>
+            By manipulating this predictable particle order we can make something known within the community as subframe tech.<br>
+        
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Subframe" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px;" class="textbox title border lefthalf">
+
+            Subframe
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px;" class="textbox text border lefthalf">
+            <br>
+            Subframe is when you place certain elements in a way that lets them get scanned in the predictable particle order that makes them work every single frame. <br>
+            You are using the fact that particle order will always be the same when saving to activate each particle at the needed time in-between each frame, <br>
+            hence the name, Subframe. <br>
+            <br>
+            Life deserialization is also useful in subframe tech, because it allows you to not rely on the specific way it all is structured. (Among other reasons)<br>
+        
+        </div>
+
+    </div>
+    <div style="display:none" id="Page_Bomb Theory" class="ghost page">
+
+        <div style="position:absolute; height:64px; top:50px;" class="pagebutton righthalf title">Main</div>
+
+        <div style="position:absolute; height: 64px; top: 50px;" class="textbox title border lefthalf">
+
+            Bomb Theory
+
+        </div>
+
+        <div style="position:absolute; min-height: calc(100% - 328px); top: 164px;" class="textbox text border lefthalf">
+            <br>
+            The theory for producing bombs. It’s called “Bomb Theory” but mainly it’s for azure and azure-adjacent studies. <br>
+            <br>
+            <span class="subtitle">What is an “azure”?</span><br>
+            <i>“The Azure Lotus Mechanism: The ability for long-life GBMB to direct superheated WARP along objects, annihilating them; I have demonstrated this using an extrordinarily[sic] powerful bomb named the Azure Lotus... likely the most powerful bomb in TPT.”</i><br>
+            <b>- Ourous, the progenitor of the Azure bomb</b><br>
+            <br>
+            <span class="subtitle">What does that even mean?</span><br>
+            GBMB will create positive gravity when it touches other elements (other than DMND and GBMB), at which point its life will go from 0 to some number. <br>
+            The life then goes down by 1 every frame. When that number hits under 20, it will instead produce negative gravity, pushing everything away from it. <br>
+            Because of this, GBMB is also “sticky” in a sense; it’s hard to explain but it basically will move toward the stuff it gets attracted to, and then subsequently get displaced by it…It would be easier to see it in action.<br>
+            <br>
+            Superheated WARP was originally defined as WARP with tmp2 over 2000, which would cause it to become the temperature 10000K (9726.85C). This is also the only way to get an element to the temperature 10000K. <br>
+            These days, it’s just the literal definition of what you’d think Superheated WARP is: Literally just hot WARP, at 9999K (9725.85C) or above; it doesn’t matter what way you achieve that temperature. <br>
+            <br>
+            When you combine these two, it will have the GBMB constantly move around in what the WARP has melted, which will in return direct the WARP to what has not been melted, <br>
+            which will make more molten material, creating a positive feedback loop that ends when there isn’t enough WARP to sufficiently heat everything, or when the GBMB has died (when life hits 1, GBMB disappears). <br>
+            A way you can tell the Azure Lotus mechanism is happening is to look at the LAVA: it should be forming “clumps” of it, almost, and the black things between them is WARP. <br>
+            <br>
+            <span class="subtitle">Pressure</span><br>
+            You usually want extreme pressure in your bomb, either really really low, or really really high (usually the second one). <br>
+            <br>
+            You can get low pressure by:<br>
+            Spamming PROT<br>
+            <br>
+            You can get high pressure by:<br>
+            LIGH<br>
+            DMG<br>
+            WARP w/ high tmp<br>
+            THDR<br>
+            NEUT<br>
+            <br>
+            <span class="subtitle">Applications of Life Deserialization in bombs</span><br>
+            <b>DEUT</b><br>
+            The primary use of life deserialization is to constantly produce high-life DEUT. <br>
+            This was a revelation; prior to this, you only had so much DEUT pre-stocked to your bomb, and it was gone once you used it up. <br>
+            Now, you can make as much PROT as you want, provided the DEUT does not get blocked up by elements like PLUT or CO2.<br>
+            <br>
+            <a href="https://powdertoy.co.uk/Browse/View.html?ID=3416103">Here</a> is an example.<br>
+            <br>
+            You can see that the DEUT produced doesn’t actually have the exact value of 429497. <br>
+            This is because DEUT shares its life values with its neighbors. <br>
+            <br>
+            DEUT with life above 429497, when mixed with PROT, will make blasts where some of the PROT is at temp 0K (-273.15C). <br>
+            The amount of 0K PROT increases with life, so 429497 is going to be your optimal* life value for making hot PROT.<br>
+            *I suppose it’s moreso the highest value at which there’s absolutely zero chance you could accidentally make cold PROT.<br>
+            <b>WARP</b><br>
+            In some cases, people have also used life deserialization on WARP.<br>
+            <a href="https://powdertoy.co.uk/Browse/View.html?ID=3361394">Here</a> is a notable example from dirtguy11211.<br>
+            This isn’t really recommended because WARP inherently disrupts the structures you have to put LSNS and FILT into. <br>
+            More effectively, you can try using:<br>
+            <br>
+            <span class="subtitle">Zain Tech</span><br>
+            Discovered by Jakav.<br> 
+
+
+
+
+        </div>
+
+    </div>
   </body>
 </html> 
