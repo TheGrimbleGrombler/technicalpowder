@@ -32,7 +32,7 @@ function setupTabButtons() {
     for (let i = 0; i < buttons.length; i++) {
 
         buttons[i].addEventListener('click', () => {
-            console.log(buttons[i].textContent);
+            //console.log(buttons[i].textContent);
             swapTab(buttons[i].textContent);
         });
 
