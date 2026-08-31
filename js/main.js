@@ -31,7 +31,7 @@ function setupTabButtons() {
 
     var buttons = document.getElementsByClassName("pagebutton");
     for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].textContent.length >= 5) {
+        if (buttons[i].textContent.length >= 3) {
             buttons[i].addEventListener('click', () => {
                 //console.log(buttons[i].textContent);
                 //swapTab(buttons[i].textContent);
