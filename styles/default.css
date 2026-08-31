@@ -24,6 +24,7 @@ body img {
   text-align: center;
   text-overflow: ellipsis;
   display: flex;
+  justify-content: center;
   color: rgb(255,255,255);
   text-overflow: ellipsis;
   filter: drop-shadow(#000000 15px 15px 4px);
