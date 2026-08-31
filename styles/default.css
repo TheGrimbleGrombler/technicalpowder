@@ -70,6 +70,13 @@ body img {
   height: 256px;
   width: 256px;
 }
+.pagebutton {
+  height: 90px;
+  width: calc(33%-10px);
+  border-radius: 4px;
+  border: #FFFFFF;
+  border-style: dashed;
+}
 .square1,.square2,.square3,.square4.anchorright {
   left: 0vw;
   right: 95%;
