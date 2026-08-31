@@ -3,8 +3,11 @@ var Tick = 0;
 
 function updateVisuals() {
 
-    Tick = Tick + 1;
+    Tick = Tick + 0.25;
     document.getElementById("ring1").style.transform = "rotate(" + String(Tick) + "deg)"
+    document.getElementById("ring2").style.transform = "rotate(" + String(Tick) + "deg)"
+    document.getElementById("ring3").style.transform = "rotate(" + String(Tick) + "deg)"
+    document.getElementById("ring4").style.transform = "rotate(" + String(Tick) + "deg)"
 
     if (Tick >= 100000) {
 
